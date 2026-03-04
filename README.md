@@ -164,18 +164,18 @@ This indicates the model detected all attackers while maintaining a low false po
 
 ---
 
-# Project Structure
+## Project Structure
+
+```
 src/
 │
 ├── data/
-│ └── generator.py
-│
+├── generator.py
 ├── feature_engineering/
-│
 ├── parsers/
-│
-└── pipeline/
+├── pipeline/
 └── train_and_detect.py
+```
 
 
 ### Key Components
