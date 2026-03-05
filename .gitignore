@@ -1,4 +1,13 @@
-venv/
+# Python
 __pycache__/
-*.db
 *.pyc
+.venv/
+
+# Data
+src/data/cicids/
+
+# Database
+*.db
+
+# Plots
+*.png

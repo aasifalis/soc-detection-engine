@@ -151,6 +151,40 @@ def generate_full_dataset():
     ).reset_index(drop=True)
 
     detection_df["window"] = "detection"
+    
+def generate_normal_baseline(n=500):
+    """
+    Generate baseline normal behaviour for model training.
+    """
+    return generate_normal_behaviour(n)
+
+
+def generate_full_dataset():
+    """
+    Generate dataset with baseline vs detection window split.
+    """
+
+    # --- Baseline Window ---
+    baseline_normal = generate_normal_behaviour(180)
+    baseline_ssh = generate_ssh_bruteforce(3)
+    baseline_web = generate_web_scanner(3)
+
+    baseline_df = pd.concat(
+        [baseline_normal, baseline_ssh, baseline_web]
+    ).reset_index(drop=True)
+
+    baseline_df["window"] = "baseline"
+
+    # --- Detection Window ---
+    detection_normal = generate_normal_behaviour(20)
+    detection_ssh = generate_ssh_bruteforce(17)
+    detection_web = generate_web_scanner(17)
+
+    detection_df = pd.concat(
+        [detection_normal, detection_ssh, detection_web]
+    ).reset_index(drop=True)
+
+    detection_df["window"] = "detection"
 
     # Combine
     full_df = pd.concat([baseline_df, detection_df]).reset_index(drop=True)
