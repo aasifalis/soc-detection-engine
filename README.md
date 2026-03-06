@@ -231,9 +231,8 @@ WEB_ATTACK_*
 
 In order of priority:
 
-1. Integration with real intrusion detection datasets (e.g. CICIDS2017) to evaluate the model on real network traffic.
-2. Isolation Forest hyperparameter tuning and sensitivity analysis.
-3. Score distribution visualisation and evaluation plots (e.g. anomaly score distributions and confusion matrices) to analyse separation between normal and malicious behaviour.
-4. Tableau / analytics dashboards for analyst-facing monitoring and anomaly investigation.
-5. Database storage via SQLite to persist detection results and enable querying by IP address.
-6. Ensemble anomaly detection models (e.g. Local Outlier Factor, One-Class SVM) for model comparison.
+1. Integration with real intrusion detection datasets (e.g. CICIDS2017) to evaluate the model on real network traffic. - Completed
+2. Database storage via SQLite to persist detection results and enable querying by IP address. - Completed
+3. Tableau / analytics dashboards for analyst-facing monitoring and anomaly investigation.
+4. Score distribution visualisation and evaluation plots (e.g. anomaly score distributions and confusion matrices) to analyse separation between normal and malicious behaviour.
+5. Ensemble anomaly detection models (e.g. Local Outlier Factor, One-Class SVM) for model comparison.
