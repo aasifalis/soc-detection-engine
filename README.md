@@ -226,6 +226,50 @@ WEB_ATTACK_*
 ```
 
 ---
+## 📊 Analytics & Dashboard
+
+The anomaly detection results are visualised through an interactive **Tableau dashboard**, enabling clear interpretation of model performance and network behaviour.
+
+### Dashboard Components
+![Dashboard](docs/images/dashboard.png)
+
+**Anomaly Score Distribution**
+- Histogram showing the distribution of anomaly scores across network flows
+- Allows comparison between **benign traffic and attack traffic**
+- Demonstrates how abnormal traffic produces significantly higher anomaly scores
+
+**Confusion Matrix**
+- Evaluates model performance by comparing **predicted anomalies vs actual attack labels**
+- Highlights true positives, false positives, true negatives, and false negatives
+
+**Performance Metrics**
+- Detection Rate (Recall): percentage of attacks successfully identified
+- False Positive Rate: percentage of normal traffic incorrectly flagged as malicious
+
+**Average Anomaly Score by Label**
+- Shows the difference in anomaly scores between benign traffic and attack traffic
+- Confirms that malicious traffic consistently produces higher anomaly scores
+
+These visualisations allow the system to function similarly to a **Security Operations Center (SOC) monitoring dashboard**, enabling analysts to quickly identify suspicious network activity.
+
+---
+
+## 🗄️ Data Storage
+
+Detected anomalies and model outputs are stored in a **SQLite database** for persistence and further analysis.
+
+### Stored Fields
+
+- Network flow features
+- Anomaly score
+- Predicted anomaly label
+- Ground truth attack label
+
+### Benefits
+
+- Historical anomaly tracking
+- Data export for analytics
+- Integration with dashboard visualisation tools
 
 ## Future Improvements
 
@@ -235,4 +279,4 @@ In order of priority:
 2. Database storage via SQLite to persist detection results and enable querying by IP address. - Completed
 3. Tableau / analytics dashboards for analyst-facing monitoring and anomaly investigation.
 4. Score distribution visualisation and evaluation plots (e.g. anomaly score distributions and confusion matrices) to analyse separation between normal and malicious behaviour.
-5. Ensemble anomaly detection models (e.g. Local Outlier Factor, One-Class SVM) for model comparison.
+5. Containerisation using Docker and scalable deployment via Kubernetes.
