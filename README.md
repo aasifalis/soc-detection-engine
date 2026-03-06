@@ -277,6 +277,6 @@ In order of priority:
 
 1. Integration with real intrusion detection datasets (e.g. CICIDS2017) to evaluate the model on real network traffic. - Completed
 2. Database storage via SQLite to persist detection results and enable querying by IP address. - Completed
-3. Tableau / analytics dashboards for analyst-facing monitoring and anomaly investigation.
-4. Score distribution visualisation and evaluation plots (e.g. anomaly score distributions and confusion matrices) to analyse separation between normal and malicious behaviour.
+3. Tableau / analytics dashboards for analyst-facing monitoring and anomaly investigation. - Completed
+4. Score distribution visualisation and evaluation plots (e.g. anomaly score distributions and confusion matrices) to analyse separation between normal and malicious behaviour. - Completed
 5. Containerisation using Docker and scalable deployment via Kubernetes.
