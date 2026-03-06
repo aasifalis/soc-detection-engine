@@ -231,7 +231,7 @@ WEB_ATTACK_*
 The anomaly detection results are visualised through an interactive **Tableau dashboard**, enabling clear interpretation of model performance and network behaviour.
 
 ### Dashboard Components
-![Dashboard](docs/images/dashboard.png)
+![Dashboard](assets/images/Screenshot 2026-03-06 192119.jpg)
 
 **Anomaly Score Distribution**
 - Histogram showing the distribution of anomaly scores across network flows
