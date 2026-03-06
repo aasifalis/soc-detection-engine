@@ -8,7 +8,6 @@ from sklearn.preprocessing import StandardScaler
 
 from src.data.cicids_loader import load_cicids_dataset
 from src.data.generator import generate_full_dataset
-
 from src.database.store_results import save_results_to_db
 
 
@@ -96,11 +95,6 @@ def run_pipeline() -> None:
         result_df = _train_and_detect(
             X_train.values, X_test.values, test_df, id_cols=["Label"]
         )
-        
-        save_results_to_db(result_df)
-
-        _print_metrics(result_df)
-        print("\nDataset Shape:", result_df.shape)
 
     else:
         print("Loading synthetic dataset...")
@@ -117,12 +111,17 @@ def run_pipeline() -> None:
         result_df = _train_and_detect(
             X_baseline.values, X_detection.values, detection_df, id_cols=["ip"]
         )
-        
-        save_results_to_db(result_df)
 
         result_df["is_attacker"] = result_df["ip"].str.contains("ATTACK").astype(int)
-        _print_metrics(result_df)
-        print("\nDataset Shape:", result_df.shape)
+
+    save_results_to_db(result_df)
+    result_df.to_csv("anomaly_results.csv", index=False)
+
+    print("Results saved to SQLite database")
+    print("Results exported to anomaly_results.csv")
+
+    _print_metrics(result_df)
+    print("\nDataset Shape:", result_df.shape)
 
 
 if __name__ == "__main__":
